@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Star_goals</string>
+    <string name="creation_success">You successfully created a goal!</string>
+    <string name="create_button">Add goal</string>
+    <string name="display_goal_button">Show the goal I created</string>
+    <string name="new_query">Find a goal</string>
+    <string name="add_new_goal">Create a new goal</string>
+    <string name="rate_goal">Rate one of your goals</string>
+    <string name="query_hint">What are you looking for?</string>
+    <string name="no_matches">Sorry, there aren\'t any matches.</string>
+    <string name="rate_this_goal">Submit today\'s rating</string>
+</resources>
