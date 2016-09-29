@@ -22,5 +22,7 @@
         <activity android:name=".GoalCreator"></activity>
         <activity android:name=".RateGoal"></activity>
         <activity android:name=".RatingSubmission"></activity>
+        <activity android:name=".CategoryBrowse"></activity>
+        <activity android:name=".RatingHistory"></activity>
     </application>
 </manifest>

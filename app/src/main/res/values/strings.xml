@@ -8,5 +8,7 @@
     <string name="rate_goal">Rate one of your goals</string>
     <string name="query_hint">What are you looking for?</string>
     <string name="no_matches">Sorry, there aren\'t any matches.</string>
-    <string name="rate_this_goal">Submit today\'s rating</string>
+    <string name="rate_this_goal">Rate this goal</string>
+    <string name="search_range">How far back to search</string>
+    <string name="standard_submit">Submit</string>
 </resources>

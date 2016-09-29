@@ -28,5 +28,6 @@ public class RatingSubmission extends AppCompatActivity {
         int ratedGoal = intent.getIntExtra("rated_goal", 0);
         values.put(DatabaseContract.RatingTable.RATED_GOAL, ratedGoal);
         long newRowId = db.insert(DatabaseContract.RatingTable.TABLE_NAME, null, values);
+        db.close();
     }
 }

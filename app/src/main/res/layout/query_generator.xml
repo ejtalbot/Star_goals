@@ -5,7 +5,6 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/created_goal_displayer"
         android:id="@+id/query"
         android:hint="@string/query_hint" />
     <Button

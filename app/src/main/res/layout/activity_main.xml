@@ -9,21 +9,24 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.erik.example.star_goals.MainActivity">
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter goal name"
-        android:id="@+id/goal_entry"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter a category"
-        android:layout_below="@id/goal_entry"
-        android:id="@+id/category_entry"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="createGoal"
         android:text="@string/create_button"
-        android:layout_below="@id/category_entry"/>
+        android:id="@+id/create_goal_button" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="searchForGoal"
+        android:layout_below="@id/create_goal_button"
+        android:id="@+id/create_query_button"
+        android:text="Find a goal you created" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="browseCategories"
+        android:layout_below="@id/create_query_button"
+        android:id="@+id/browse_category_button"
+        android:text="Overview of initiatives" />
 </RelativeLayout>

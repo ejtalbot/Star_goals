@@ -1,5 +1,6 @@
 package com.erik.example.star_goals;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.CursorIndexOutOfBoundsException;
@@ -14,19 +15,22 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Objects;
 
 /**
  * Created by erik on 8/24/16.
  */
 public class GoalDisplayer extends AppCompatActivity {
-    //public static String TEST = "com.example.first_app.TEST";
+    static RatingBar ratingBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -34,6 +38,7 @@ public class GoalDisplayer extends AppCompatActivity {
         setContentView(R.layout.final_display);
         View noGoalView = findViewById(R.id.no_goal);
         Snackbar noGoalMessage = Snackbar.make(noGoalView, R.string.no_matches, Snackbar.LENGTH_LONG);
+        ratingBar = (RatingBar) findViewById(R.id.rating_bar);
 
         DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -61,7 +66,6 @@ public class GoalDisplayer extends AppCompatActivity {
                 sortOrder                                 // The sort order
         );
         final ArrayList<ParcelableGoal> results = new ArrayList<ParcelableGoal>();
-        //ArrayList<String[]> action = new ArrayList<String[]>();
         ListView lv = (ListView) findViewById(R.id.results_list_view);
 
         lv.setItemsCanFocus(true);
@@ -85,6 +89,7 @@ public class GoalDisplayer extends AppCompatActivity {
                 noGoalMessage.show();
             }
             } while (c.moveToNext());
+        db.close();
         final ArrayAdapter<ParcelableGoal> arrayAdapter = new ArrayAdapter<ParcelableGoal>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -97,7 +102,7 @@ public class GoalDisplayer extends AppCompatActivity {
                                     long id) {
                 ParcelableGoal item = (ParcelableGoal) parent.getItemAtPosition(position);
                 Intent intent = new Intent(GoalDisplayer.this, RateGoal.class);
-                intent.putExtra("entries", item);
+                intent.putExtra("goaltorate", item);
                 startActivity(intent);
             }
         });

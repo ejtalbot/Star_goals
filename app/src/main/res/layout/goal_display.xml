@@ -12,15 +12,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="displayEntry"
-        android:text="@string/display_goal_button"
-        android:id="@+id/created_goal_displayer"
-        android:layout_below="@id/creation_message"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/created_goal_displayer"
-        android:id="@+id/query"
-        android:hint="Enter query" />
+        android:id="@+id/rate_new_goal"
+        android:layout_below="@+id/creation_message"
+        android:text="@string/rate_this_goal"
+        android:onClick="displayEntry" />
 
 </RelativeLayout>

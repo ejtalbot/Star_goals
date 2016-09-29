@@ -14,14 +14,11 @@ public class MainActivity extends AppCompatActivity {
 
     public static String GOAL_NAME = "com.example.first_app.GOAL";
     public static String CATEGORY_NAME = "com.example.first_app.CATEGORY";
-    public static String QUERY_NAME = "com.example.first_app.QUERY";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
     }
 
     @Override
@@ -48,13 +45,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createGoal(View view){
-        Intent intent = new Intent(this, GoalCreation.class);
-        EditText editGoalText = (EditText) findViewById(R.id.goal_entry);
-        String goal = editGoalText.getText().toString();
-        intent.putExtra(GOAL_NAME, goal);
-        EditText editCategoryText = (EditText) findViewById(R.id.category_entry);
-        String category = editCategoryText.getText().toString();
-        intent.putExtra(CATEGORY_NAME, category);
-        startActivity(intent);
+        Intent goalCreationIntent = new Intent(MainActivity.this, GoalCreator.class);
+        startActivity(goalCreationIntent);
+    }
+
+    public void searchForGoal(View view){
+        Intent queryIntent = new Intent(this, QueryGenerator.class);
+        startActivity(queryIntent);
+    }
+
+    public void browseCategories(View view){
+        Intent browseIntent = new Intent(this, CategoryBrowse.class);
+        startActivity(browseIntent);
     }
 }
